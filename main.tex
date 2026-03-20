@@ -1,0 +1,138 @@
+% HZNU Assignment Template
+% Math / Statistics / Computer Science | Data Science
+
+\documentclass[11pt]{article}
+
+% ---------- Packages ----------
+\usepackage[margin=1in]{geometry}
+\usepackage{ctex}
+\usepackage{amsmath, amssymb, amsthm}
+\usepackage{mathtools}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{hyperref}
+\usepackage{xcolor}
+\usepackage{enumitem}
+\usepackage{fancyhdr}
+\usepackage{listings}
+
+% ---------- Header ----------
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\includegraphics[height=0.8cm]{logo.png}} % optional
+\fancyhead[C]{Course Name / 课程名称}
+\fancyhead[R]{Assignment \#1 — Your Name}
+\fancyfoot[C]{\thepage}
+
+% ---------- Spacing ----------
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{6pt}
+
+% ---------- Theorem ----------
+\newtheorem{theorem}{Theorem}
+\newtheorem{lemma}{Lemma}
+\newtheorem{proposition}{Proposition}
+\theoremstyle{definition}
+\newtheorem{definition}{Definition}
+\newtheorem{example}{Example}
+\theoremstyle{remark}
+\newtheorem{remark}{Remark}
+
+% ---------- Problem ----------
+\newcounter{problem}
+\newenvironment{problem}[1][]
+{\refstepcounter{problem}\noindent\textbf{Problem \theproblem. #1}\\\smallskip}
+{\vspace{1em}}
+
+\newenvironment{solution}
+{\noindent\textbf{Solution.}}
+{\hfill$\blacksquare$}
+
+% ---------- Code ----------
+\lstset{
+    language=Python,
+    basicstyle=\ttfamily\small,
+    keywordstyle=\color{blue},
+    commentstyle=\color{gray},
+    stringstyle=\color{red},
+    numbers=left,
+    numberstyle=\tiny,
+    frame=single,
+    breaklines=true,
+    showstringspaces=false
+}
+
+% ---------- Shortcuts ----------
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\E}{\mathbb{E}}
+\newcommand{\Var}{\mathrm{Var}}
+
+% ---------- Title ----------
+\title{\vspace{-2cm}\textbf{Assignment \#1}}
+\author{Your Name \\
+Student ID \\
+Course Name}
+\date{\today}
+
+% ---------- Document ----------
+\begin{document}
+
+\maketitle
+
+% ---------- Problem 1 ----------
+\begin{problem}
+Compute the following integral.
+\[
+\int_0^1 x^2 dx
+\]
+\end{problem}
+
+\begin{solution}
+\[
+\int_0^1 x^2 dx = \frac{1}{3}
+\]
+\end{solution}
+
+% ---------- Problem 2 ----------
+\begin{problem}
+Let $X$ be a random variable. Compute expectation and variance.
+\end{problem}
+
+\begin{solution}
+\[
+\E[X] = \sum_x x\,p(x), \qquad
+\Var(X) = \E[X^2] - (\E[X])^2
+\]
+\end{solution}
+
+% ---------- Problem 3 ----------
+\begin{problem}
+Implement quicksort.
+\end{problem}
+
+\begin{solution}
+\begin{lstlisting}
+def quicksort(arr):
+    if len(arr) <= 1:
+        return arr
+    pivot = arr[0]
+    left = [x for x in arr[1:] if x < pivot]
+    right = [x for x in arr[1:] if x >= pivot]
+    return quicksort(left) + [pivot] + quicksort(right)
+\end{lstlisting}
+\end{solution}
+
+% ---------- Example with Subproblems ----------
+\begin{problem}
+Answer the following:
+\end{problem}
+
+\begin{solution}
+\begin{enumerate}[label=(\alph*)]
+\item First subproblem
+\item Second subproblem
+\item Third subproblem
+\end{enumerate}
+\end{solution}
+
+\end{document}
